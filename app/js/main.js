@@ -6081,7 +6081,7 @@ let locales = {
   },
   ua: {
     common: {
-      buttonCAT: "Приєднатись"
+      buttonCAT: "Приєднатися"
     },
     popup: {
       title: "Ваш внесок",
@@ -6126,7 +6126,7 @@ let locales = {
         },
         second_item: {
           paragraph_1: "Вбито, включно ",
-          amount: "430*",
+          amount: "450*",
           paragraph_2: "дітей"
         },
         third__item: {

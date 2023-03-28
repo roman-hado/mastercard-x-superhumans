@@ -7,7 +7,7 @@ module.exports = {
             'libre-baskerville': ['Libre Baskerville', 'sans-serif',],
         },
         colors: {
-          "btn-color": "#934CB0",
+          "btn-color": "#FF6525",
           "outrageous-orange": "#FF6B3F",
           "crisis-bg": "#BECDCE",
           silver: "#B8B8B8",
