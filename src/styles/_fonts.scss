@@ -1,6 +1,18 @@
 @font-face {
-    font-family: 'Libre Baskerville';
-    src: url('../fonts/LibreBaskerville-Regular.ttf') format('truetype');
+    font-family: 'FaroTrial';
+    src: url('../fonts/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1VQ.woff2') format('truetype');
     font-weight: 400;
-    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TRY Grtsk Variable';
+    src: url('../fonts/TRY-Grtsk-Variable-Bold.otf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Light.otf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
 }

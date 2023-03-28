@@ -1,0 +1,14 @@
+<div
+    id="sticky-button"
+    class="fixed bottom-0 z-40 w-full py-4 bg-white transition-transform shadow-md-1 xl:hidden"
+    x-data="stickyButton"
+    @scroll.window="setIsShowButton()"
+    x-init="setIsShowButton()"
+    :class="{ 'translate-y-[100%]' : showStickyButton}"
+>
+  <button
+      x-text="$t('common.buttonCAT')"
+      @click="open()"
+      class="help-btn mx-auto w-[207px] font-faroTrial md:w-[248px] block bg-btn-color text-white h-[49.50px] md:h-[59px] uppercase text-base md:text-xl">
+  </button>
+</div>

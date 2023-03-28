@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#111111">
+  <title>Site</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+
+<body x-data="popUp" class="overflow-x-hidden">
+    <header
+    class="pt-[17px] absolute top-0 z-100 w-full md:pt-[26px]"
+    :class="$store.language.lang === 'en' ? 'hidden' : 'block'"
+>
+    <div class="container px-5 mx-auto flex justify-end md:px-[49px]">
+    <div
+        x-data="{
+        open: false,
+        toggle() {
+            if (this.open) {
+                return this.close()
+            }
+            this.$refs.button.focus()
+            this.open = true
+        },
+        close(focusAfter) {
+            if (! this.open) return
+            this.open = false
+            focusAfter && focusAfter.focus()
+        }
+        }"
+        x-on:keydown.escape.prevent.stop="close($refs.button)"
+        x-on:focusin.window="! $refs.panel.contains($event.target) && close()"
+        x-id="['dropdown-button']"
+        class="relative bg-blur px-[5px] text-white font-faroTrial text-sm leading-[16px] transition-all duration-500 w-[61px]"
+    >
+        <button
+            x-ref="button"
+            x-on:click="toggle()"
+            :aria-expanded="open"
+            :aria-controls="$id('dropdown-button')"
+            type="button"
+            class="flex items-center capitalize justify-between w-full py-[3px]"
+        >
+        <span x-text="$locale"></span>
+        <div class="inline-block flex items-center gap-[8px]">
+            <span x-html="flags[lang]"></span>
+            <svg class="duration-200" :class="{ 'rotate-180': open }" width="7" height="5" viewBox="0 0 7 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L3.5 3.5L6 1" stroke="white"/>
+            </svg>
+        </div>
+        </button>
+
+        <div
+        x-ref="panel"
+        x-show="open"
+        x-transition.origin.top.left
+        x-on:click.outside="close($refs.button)"
+        :id="$id('dropdown-button')"
+        style="display: none"
+        class="w-full pt-[2px] pb-[4px]"
+        >
+        <button
+            @click="$locale('ua'); changeLang('ua'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'ua' | $store.language.lang !== 'ua' ? 'hidden' : 'flex'"
+        >
+            <span>Ua</span>
+            <span x-html="flags.ua" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('en'); changeLang('en'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'en' ? 'hidden' : 'flex'"
+        >
+            <span>En</span>
+            <span x-html="flags.en" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('pl'); changeLang('pl'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'pl' | $store.language.lang !== 'pl' ? 'hidden' : 'flex'"
+        >
+            <span>Pl</span>
+            <span x-html="flags.pl" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('es'); changeLang('es'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'es' | $store.language.lang !== 'es' ? 'hidden' : 'flex'"
+        >
+            <span>Es</span>
+            <span x-html="flags.es" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('de'); changeLang('de'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'de' | $store.language.lang !== 'de' ? 'hidden' : 'flex'"
+        >
+            <span>De</span>
+            <span x-html="flags.de" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('it'); changeLang('it'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'it' | $store.language.lang !== 'it' ? 'hidden' : 'flex'"
+        >
+            <span>It</span>
+            <span x-html="flags.it" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('fr'); changeLang('fr'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang !== 'fr' && ($store.language.lang === 'fr' || $store.language.lang === 'be') ? 'flex' : 'hidden'"
+        >
+            <span>Fr</span>
+            <span x-html="flags.fr" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('cz'); changeLang('cz'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'cz' | $store.language.lang !== 'cz' ? 'hidden' : 'flex'"
+        >
+            <span>Cz</span>
+            <span x-html="flags.cz" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('ro'); changeLang('ro'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'ro' | $store.language.lang !== 'ro' ? 'hidden' : 'flex'"
+        >
+            <span>Ro</span>
+            <span x-html="flags.ro" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('sk'); changeLang('sk'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'sk' | $store.language.lang !== 'sk' ? 'hidden' : 'flex'"
+        >
+            <span>Sk</span>
+            <span x-html="flags.sk" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('hr'); changeLang('hr'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'hr' | $store.language.lang !== 'hr' ? 'hidden' : 'flex'"
+        >
+            <span>Hr</span>
+            <span x-html="flags.hr" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('hu'); changeLang('hu'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'hu' | $store.language.lang !== 'hu' ? 'hidden' : 'flex'"
+        >
+            <span>Hu</span>
+            <span x-html="flags.hu" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('nl'); changeLang('nl'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang !== 'nl' && ($store.language.lang === 'nl' || $store.language.lang === 'be') ? 'flex' : 'hidden'"
+        >
+            <span>Nl</span>
+            <span x-html="flags.nl" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('rs'); changeLang('rs'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'rs' | $store.language.lang !== 'rs' ? 'hidden' : 'flex'"
+        >
+            <span>Rs</span>
+            <span x-html="flags.rs" class="mr-[14px]"></span>
+        </button>
+
+        <button
+            @click="$locale('pt'); changeLang('pt'); close()"
+            class="items-center w-full justify-between py-[1.6px]"
+            :class="lang === 'pt' | $store.language.lang !== 'pt' ? 'hidden' : 'flex'"
+        >
+            <span>Pt</span>
+            <span x-html="flags.pt" class="mr-[14px]"></span>
+        </button>
+        </div>
+    </div>
+    </div>
+</header>
+
+    <main>
+      <div
+    id="pop-up"
+    x-init="lang = $store.language.lang"
+    class="fixed z-[100] w-screen h-screen overflow-y-auto invisible opacity-0 bg-white top-0 left-0 translate-y-[-200%] transition-all duration-500 flex flex-col justify-between md:justify-start"
+    :class="{ '!translate-y-0 !visible !opacity-100': isOpened }"
+>
+<div class="relative w-full pt-[45px]">
+    <div
+        class="absolute flex items-center justify-center right-0 top-0 w-[16px] md:w-[28px] h-[16px] md:h-[28px] mr-[18px] md:mt-[40px] md:mr-[66px] mt-[18px] cursor-pointer"
+        @click="close()"
+    >
+    <img class="w-[11px] h-[11px] md:w-[20px] md:h-[20px]" src="../../img/svg/close-popup.svg" alt="close popup">
+    </div>
+
+    <div class="container mx-auto px-[17px] md:pt-[34px] w-full text-center md:w-[517px]">
+    <h3 class="text-xl leading-[24px] font-bold italic md:text-[30px] md:leading-[36px]" x-text="$t('popup.title')"></h3>
+    <div class="font-faroTrial flex justify-center text-5xl mt-[7px] md:mt-[3px] md:text-[70px] md:leading-[84px]">
+        <span class="text-base leading-[28px] mr-[4px] md:text-2xl md:leading-[61px]" x-text="currencySign"></span>
+        <span x-effect="formatAmount(amount)" x-text="intAmount"></span>
+        <span class="text-base leading-[69px] md:text-[24px] md:leading-[117px]" x-text="decimalAmount"></span>
+    </div>
+
+    <div class="absolute left-0 right-0 bg-silver h-[1px] mt-3 md:mt-[-10px]"></div>
+
+    <div class="mt-[44px] md:mt-[50px]">
+        <div class="flex justify-between">
+        <p class="font-bold italic text-base leading-[23px] md:text-[25px] md:leading-[30px]" x-text="$t('popup.heading')"></p>
+
+        <div
+            x-on:keydown.escape.prevent.stop="closeSelect($refs.button)"
+            x-on:focusin.window="! $refs.panel.contains($event.target) && closeSelect()"
+            x-id="['dropdown-button']"
+            class="relative font-faroTrial"
+        >
+            <button
+                x-ref="button"
+                x-on:click="toggleSelect()"
+                :aria-expanded="isOpenedSelect"
+                :aria-controls="$id('dropdown-button')"
+                type="button"
+                class="flex items-center bg-white text-black text-base md:text-[18px] md:leading-[30px]"
+            >
+            <span x-text="currencySign"></span>
+            <span x-text="currency" class="mr-[4px] md:mr-[7px]"></span>
+            <img class="inline-block z-10 md:w-[8px]" src="../../img/svg/select-arrow.svg" alt="select arrow">
+            </button>
+
+            <div
+                x-ref="panel"
+                x-show="isOpenedSelect"
+                x-transition.origin.top.left
+                x-on:click.outside="closeSelect($refs.button)"
+                :id="$id('dropdown-button')"
+                style="display: none"
+                class="absolute z-10 right-0 mt-2 w-auto max-h-60 overflow-auto bg-white border border-silver"
+            >
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="en"
+                class="flex text-black items-center gap-2 w-full px-2.5 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                $USD
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="ua"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                ₴UAH
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="gb"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                £GBP
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="pl"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                złPLN
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="de"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                €EUR
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="cz"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                KčCZK
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="ro"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                LRON
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="hu"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                FtHUF
+            </button>
+            <button
+                @click="onChangeCurrencySelect($el)"
+                data-currency-name="rs"
+                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+            >
+                dinRSD
+            </button>
+            </div>
+
+        </div>
+        </div>
+        <div class="amount-btns font-faroTrial w-full h-[44px] md:h-[63.25px] flex justify-between gap-[5px] md:gap-[8.2px] mt-[16px] md:mt-[25px] text-lg md:text-2xl">
+        <div
+            class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer flex amount-btn--active"
+            data-amount-value="25"
+            @click="onSelectAmountBtn($el)"
+        >
+            <span x-text="currencySign"></span>25
+        </div>
+        <div
+            class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer"
+            data-amount-value="45"
+            @click="onSelectAmountBtn($el)"
+        >
+            <span x-text="currencySign"></span>45
+        </div>
+        <div
+            class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer"
+            data-amount-value="150"
+            @click="onSelectAmountBtn($el)"
+        >
+            <span x-text="currencySign"></span>150
+        </div>
+        <div
+            class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer"
+            data-amount-value="500"
+            @click="onSelectAmountBtn($el)"
+        >
+            <span x-text="currencySign"></span>500
+        </div>
+        </div>
+
+        <div class="w-full font-faroTrial h-[44px] md:h-[63.25px] relative border border-silver mt-[21px] text-base">
+        <span class="absolute block h-full flex items-center pl-[8px] md:pl-[15px] md:text-[20px]" x-text="currencySign"></span>
+        <input
+            class="input-amount w-full h-full outline-0 px-[34px] md:px-[44px] md:text-[20px] md:leading-[24px] placeholder:text-silver-chalice"
+            type="number"
+            value=""
+            :placeholder="$t('popup.placeholder')"
+            @keyup="onInputAmount($el)"
+        />
+        </div>
+    </div>
+
+    <div
+        class="text-start mt-[9.5px] font-faroTrial text-xs text-silver-chalice md:mt-[10px]"
+        :class="lang === 'es' ? 'block' : 'hidden'"
+    >*Como el pago es directo a la ONG, en la aprobación final de tu banco verás que se convierte la moneda de Euros (EUR) a Grivna (UAH). El importe es el equivalente con cambio actual -aprox. 1€=0.025UAH</div>
+    </div>
+</div>
+
+<div
+    class="mt-5 md:relative container mx-auto px-[17px] bottom-0 right-0 left-0 mb-[49px] md:w-[517px] md:mt-[88px]"
+    :class="{ 'md:mt-[29px]': lang === 'es' }"
+>
+    <button
+        @click="sendRequest()"
+        x-text="$t('common.buttonCAT')"
+        class="help-btn w-full font-faroTrial block bg-btn-color text-white h-[54px] md:h-[77.3px] uppercase text-base md:text-2xl"
+    >
+    </button>
+</div>
+</div>
+
+      <div
+    id="sticky-button"
+    class="fixed bottom-0 z-40 w-full py-4 bg-white transition-transform shadow-md-1 xl:hidden"
+    x-data="stickyButton"
+    @scroll.window="setIsShowButton()"
+    x-init="setIsShowButton()"
+    :class="{ 'translate-y-[100%]' : showStickyButton}"
+>
+  <button
+      x-text="$t('common.buttonCAT')"
+      @click="open()"
+      class="help-btn mx-auto w-[207px] font-faroTrial md:w-[248px] block bg-btn-color text-white h-[49.50px] md:h-[59px] uppercase text-base md:text-xl">
+  </button>
+</div>
+
+      <section id="hero" class="relative">
+  <div class="w-full h-[283px] md:h-[641px]">
+    <img class="w-full h-full object-cover 2xl:h-[870px]" src="../../img/hero-logo.png" alt="hero logo">
+  </div>
+  <div class="container px-6 absolute inset-0 mx-auto flex items-center justify-center mt-[-46px] md:pl-[86px] md:pr-[60px] md:mt-[-105px]">
+    <h1
+        class="text-white font-tryGrtskVariable italic text-[40px] font-bold leading-[50.18px] xl:text-[105px] xl:leading-[126px] relative"
+        x-text="$t('hero.title')"
+      >
+    </h1>
+  </div>
+</section>
+
+      <section id="join-us" class="bg-outrageous-orange relative z-2 h-auto">
+  <div class="absolute z-1 w-full mt-[-72px] md:mt-[-164px] overflow-hidden h-[100px] md:h-[300px]">
+    <picture>
+      <source srcset="../../img/svg/join-us-bg.svg" media="(min-width: 768px)" />
+      <img class="w-full object-cover min-[550px]:ml-[-32px] md:ml-[0px] min-w-[591px] min-[550px]:min-w-[800px] max-w-none ml-[-24px] md:ml-[0px]" src="../../img/svg/join-us-bg--mobile.svg" alt="join-us bg" />
+    </picture>
+  </div>
+  <div class="pb-14 relative z-10">
+    <div class="container px-5 md:px-[72px] mx-auto flex justify-center">
+      <div class="mt-[20px] md:mt-[12px]">
+        <div class="flex flex-col items-center md:flex-row md:justify-center">
+          <div class="w-[188px] md:w-auto md:mt-[-10px]">
+            <img class="w-full" src="../../img/svg/blablacar-logo.svg" alt="blablacar">
+          </div>
+          <div class="w-[30px] mt-4 md:w-auto md:mx-[50px]">
+            <img class="w-full" src="../../img/svg/union-icon.svg" alt="union icon">
+          </div>
+          <div class="w-52 mt-4 md:w-[368.63px]">
+            <img class="w-full" src="../../img/svg/super-humans-logo.svg" alt="superhumans">
+          </div>
+        </div>
+        <p class="text-center text-black text-[25px] font-faroTrial font-normal px-5 md:px-0 leading-[30px] mt-[29px] md:mt-[26px] md:text-[40px] md:leading-[48px]">
+          <span x-text="$t('intro.text')"></span>
+          <br class="md:hidden">
+          <span x-text="$t('intro.question')" class="font-bold font-tryGrtskVariable italic "></span>
+        </p>
+        <button
+          x-text="$t('common.buttonCAT')"
+          @click="open()"
+          class="help-btn font-faroTrial mx-auto w-[207px] md:w-[248px] block bg-btn-color text-white h-[49.50px] md:h-[59px] uppercase text-base md:text-xl mt-[45px] md:mt-[54px]"
+        >
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="help" class="relative z-1 md:flex md:flex-row-reverse md:mt-[-82px] md:bg-white">
+  <div class="absolute mt-[-72px] min-[550px]:mt-[-100px] z-0 w-full md:h-[300px] md:mt-[-160px]">
+    <picture>
+      <source srcset="../../img/svg/subtract.svg" media="(min-width: 768px)" />
+      <img class="w-full h-full object-cover" src="../../img/svg/invite-top-mask.svg" alt="invite mask" />
+    </picture>
+  </div>
+  <div class="h-[401px] md:h-[1047px] md:min-w-[356px] lg:min-w-[556px] xl:min-w-[656px] xl:max-w-[656px]">
+    <picture>
+      <source srcset="../../img/invite-logo-d.png" media="(min-width: 768px)" />
+      <img class="object-cover w-full h-full" src="../../img/invite-logo.png" alt="invite logo">
+    </picture>
+  </div>
+
+  <div class="relative px-5 md:px-[72px] mt-1.5 md:mt-[164px] pb-6 max-w-[800px] min-[1500px]:mx-auto">
+    <div class="absolute mt-[-82px] w-full ml-[-20px] z-1 md:hidden">
+      <svg class="w-full h-full object-cover" width="375" height="125" viewBox="0 0 375 125" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M74.3205 25.1501L0 -7.62939e-06V125H542V13.5135L247.1 49.5495L204.223 22.1471L74.3205 25.1501Z" fill="white"/>
+      </svg>
+    </div>
+    <h2 x-text="$t('content_with_img.title')" class="relative z-2 font-bold text-black text-[30px] leading-[34px] italic md:leading-[50.4px] md:text-[45px]"></h2>
+    <p class="relative font-faroTrial z-2 mt-[22px] md:mt-[36px] leading-[20.8px] text-[16px] md:text-lg md:leading-[22.6px]">
+      <span x-text="$t('content_with_img.paragraph_1')" class="xl:pr-10"></span>
+      <br><br>
+      <span x-text="$t('content_with_img.paragraph_2')"></span>
+      <br><br>
+      <span x-text="$t('content_with_img.paragraph_3')"></span>
+      <br><br>
+      <span x-text="$t('content_with_img.paragraph_4')" class="font-tryGrtskVariable font-bold italic mt-1 md:mt-[8px] text-[18px] md:text-[20px] leading-[23px] md:leading-[25px] inline-block">
+      </span>
+    </p>
+    <button
+      x-text="$t('common.buttonCAT')"
+      @click="open()"
+      class="relative z-10 font-faroTrial help-btn mx-auto md:mx-[0px] w-[207px] md:w-[248px] block bg-btn-color text-white h-[49.50px] md:h-[59px] uppercase text-base md:text-xl mt-[50px] md:mt-[54px]"
+    >
+    </button>
+  </div>
+</section>
+      <section id="blablacar" class="relative mt-[101px] bg-[#2ED1FF] xl:mt-[210px] 1400:mt-[80px]">
+  <div class="absolute top-[-101px] left-0 w-full lg:top-[-115px] xl:top-[-210px]">
+    <picture>
+      <source media="(min-width: 767px)" srcset="../../img/svg/blablacar-bg-desk.svg">
+      <img src="../../img/svg/blablacar-bg-mob.svg" class="w-full h-full" alt="">
+    </picture>
+  </div>
+  <div class="max-w-[1340px] mx-auto px-5 relative">
+    <div class="lg:flex lg:items-end">
+      <div class="max-w-[790px] mx-auto lg:ml-0 lg:pb-[160px] lg:self-start lg:mr-5">
+          <h3 x-text="$t('blablacar.title')" class="text-[30px] leading-[34px] mb-6 font-bold font-tryGrtskVariable italic xl:text-[45px] xl:leading-[50px] xl:mb-5"></h3>
+          <div class="text-base leading-5 font-faroTrial mb-[67px] xl:text-[18px] xl:leading-[22px] xl:mb-[74px] xl:max-w-[754px]">
+            <p x-text="$t('blablacar.paragraph_1')" class="mb-5"></p>
+            <p x-text="$t('blablacar.paragraph_2')" class="mb-5"></p>
+            <p x-text="$t('blablacar.paragraph_3')" class="mb-5"></p>
+            <p x-text="$t('blablacar.paragraph_4')"></p>
+          </div>
+          <!-- <ul class="max-w-[204px] mx-auto mb-[53px] md:flex md:max-w-none md:justify-center md:gap-x-5 lg:justify-start xl:mb-[65px]">
+            <li class="text-center mb-7 md:mb-0 lg:max-w-[286px]">
+              <div class="text-[50px] leading-[60px] font-bold font-tryGrtskVariable mb-2 text-white italic xl:text-[70px] xl:leading-[84px] lg:mb-1">16,150</div>
+              <div class="text-[14px] leading-[18px] font-faroTrial xl:text-[20px] xl:leading-[26px]">Lorem ipsum dolor sit amet consectetur.</div>
+            </li>
+            <li class="text-center lg:max-w-[286px]">
+              <div class="text-[50px] leading-[60px] font-bold font-tryGrtskVariable mb-2 text-white italic xl:text-[70px] xl:leading-[84px] lg:mb-1">6,490 160</div>
+              <div class="text-[14px] leading-[18px] font-faroTrial xl:text-[20px] xl:leading-[26px]">Lorem ipsum dolor sit amet consectetur.</div>
+            </li>
+          </ul> -->
+          <div class="flex justify-center gap-x-3 mb-[60px] lg:mb-0 lg:justify-start lg:gap-x-7">
+            <a href="https://apps.apple.com/md/app/blablacar-carpooling-and-bus/id341329033" target="_blank" class="relative z-10 w-[153px] h-[49px] lg:w-[153px] lg:h-[49px]"><img src="../../img/app-store.png" class="w-full h-full object-contain" alt="App store"></a>
+            <a href="https://play.google.com/store/apps/details?id=com.comuto&hl=ua&gl=US&pli=1" target="_blank" class="relative z-10 w-[169px] h-[49px] lg:w-[160px] lg:h-[49px]"><img src="../../img/svg/google-play.svg" class="w-full h-full object-contain" alt="Google play"></a>
+          </div>
+      </div>
+        <div class="max-w-[334px] w-full mx-auto lg:mr-0 lg:max-w-[475px] lg:shrink-0">
+          <img src="../../img/blablacar-image.png" class="w-full h-full object-contain" alt="Mobile app">
+        </div>
+    </div>
+  </div>
+</section>
+    </main>
+
+</body>
+
+</html>

@@ -4,3 +4,12 @@
 @import "../../node_modules/swiper/swiper-bundle.min";
 @import "./fonts";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'TRY Grtsk Variable', sans-serif;
+}

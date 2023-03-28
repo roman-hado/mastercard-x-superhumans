@@ -3,14 +3,19 @@
 
 @include('partials/head.html')
 
-<body x-data class="flex flex-col h-full">
+<body x-data="popUp" class="overflow-x-hidden">
     @include('partials/header.html')
 
-    <main class="main flex-grow">
-      @include('partials/index-hero.html')
+    <main>
+      @include('partials/pop-up.html')
+      @include('partials/sticky-button.html')
+      @include('partials/hero.html')
+      @include('partials/join-us.html')
+      @include('partials/help.html')
+      @include('partials/blablacar.html')
     </main>
 
-    @include('partials/footer.html')
+    <!-- @include('partials/footer.html') -->
 </body>
 
 </html>

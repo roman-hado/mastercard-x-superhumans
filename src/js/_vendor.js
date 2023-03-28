@@ -1,1 +1,1 @@
-// import './vendor/content';
+import './vendor/locales';

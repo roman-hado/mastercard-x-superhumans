@@ -6,6 +6,20 @@ module.exports = {
         fontFamily: {
             'libre-baskerville': ['Libre Baskerville', 'sans-serif',],
         },
+        colors: {
+          "btn-color": "#934CB0",
+          "outrageous-orange": "#FF6B3F",
+          "crisis-bg": "#BECDCE",
+          silver: "#B8B8B8",
+          "silver-chalice": "#9E9E9E",
+          blur: "rgba(255, 255, 255, 0.3)",
+        },
+        boxShadow: {
+          "md-1": "0px 0px 5px 0px rgba(0,0,0,0.1)",
+        },
+        zIndex: {
+          '100': '100',
+        }
     },
     screens: {
         'us': '370px',
@@ -17,6 +31,11 @@ module.exports = {
         'xl': '1366px',
         'xl-1': '1365px',
         '2xl': '1536px',
+    },
+    fontFamily: {
+      faroTrial: ["FaroTrial", "sans-serif"],
+      tryGrtskVariable: ["TRY Grtsk Variable", "sans-serif"],
+      gilroy: ["Gilroy", "sans-serif"],
     },
     container: {
         center: true,
