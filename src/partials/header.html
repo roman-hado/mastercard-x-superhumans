@@ -1,0 +1,29 @@
+<header class="header sticky top-0 w-full bg-blue-400 py-5 z-10">
+    <div class="container">
+        <div class="flex justify-between">
+            <a href="/">
+                <svg class="w-5 h-5">
+                    <use xlink:href="img/sprite.svg#rederacor"></use>
+                </svg>
+            </a>
+            <div class="hidden md-1:block" :class="{ '!block' : $store.headerMenu.visible }">
+                <nav>
+                    <ul class="flex items-center gap-3">
+                        <li class="flex items-center">
+                            About
+                        </li>
+                        <li>
+                            Blog
+                        </li>
+                        <li>
+                            Collection
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <button class="md-1:hidden" @click="$store.headerMenu.toggle()">Menu</button>
+        </div>
+    </div>
+</header>
+
+
