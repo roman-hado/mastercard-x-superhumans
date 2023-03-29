@@ -9,20 +9,62 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-
 body {
   font-family: 'Faro', sans-serif;
 }
-
+.amount-btn {
+  transition-duration: 0.2s;
+}
+.amount-btn img {
+  transition-duration: 0.2s;
+}
+.amount-btn:hover {
+  background-color: #FF6B3F;
+  color: #fff;
+}
+.amount-btn:hover img {
+  filter: brightness(0) invert(1);
+}
+.amount-btn--active {
+  background-color: #FF6B3F;
+  color: #fff;
+  border-color: #FF6B3F;
+}
+.amount-btn--active img {
+  filter: brightness(0) invert(1);
+}
+.select-currency {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.help-btn {
+  transition-duration: 0.4s;
+}
+.help-btn:hover {
+  transform: scale(1.02);
+}
+.superhumans-video {
+  pointer-events: none;
+}
+.superhumans-video[poster] {
+  object-position: center;
+}
 .hero-bg {
   object-position: 93% -4px;
 }
-
 .inherit {
   font-style: inherit;
 }
-
 @media screen and (min-width: 768px) {
   .hero-bg {
     object-position: 100% 0; 

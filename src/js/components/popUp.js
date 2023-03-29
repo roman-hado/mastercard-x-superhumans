@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { flags } from "../vendor/flags";
 
 export const popUp = () => ({
   isOpened: false,
@@ -10,7 +9,6 @@ export const popUp = () => ({
   decimalAmount: ".00",
   isOpenedSelect: false,
   lang: null,
-  flags: flags,
 
   init() {
     document.addEventListener("DOMContentLoaded", () => {
