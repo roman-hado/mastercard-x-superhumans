@@ -13,3 +13,16 @@
 body {
   font-family: 'TRY Grtsk Variable', sans-serif;
 }
+
+.hero-bg {
+  object-position: 93% -4px;
+}
+
+@media screen and (min-width: 768px) {
+  .hero-bg {
+    object-position: 100% 0; 
+  }
+  .help-logo {
+    object-position: -193px 0;
+  }
+}

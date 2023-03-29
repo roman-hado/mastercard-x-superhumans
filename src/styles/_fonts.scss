@@ -1,18 +1,24 @@
 @font-face {
-    font-family: 'FaroTrial';
-    src: url('../fonts/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYi1VQ.woff2') format('truetype');
+    font-family: 'Farro';
+    src: local('Farro Medium'), local('Farro-Medium'), url('../resources/fonts/Farromedium.woff2') format('woff2'), url('../resources/fonts/Farromedium.woff') format('woff'), url('../resources/fonts/Farromedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Farro';
+    src: local('Farro Light'), local('Farro-Light'), url('../resources/fonts/Farrolight.woff2') format('woff2'), url('../resources/fonts/Farrolight.woff') format('woff'), url('../resources/fonts/Farrolight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Farro';
+    src: local('Farro Regular'), local('Farro-Regular'), url('../resources/fonts/Farroregular.woff2') format('woff2'), url('../resources/fonts/Farroregular.woff') format('woff'), url('../resources/fonts/Farroregular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
-    font-family: 'TRY Grtsk Variable';
-    src: url('../fonts/TRY-Grtsk-Variable-Bold.otf') format('truetype');
+    font-family: 'Farro';
+    src: local('Farro Bold'), local('Farro-Bold'), url('../resources/fonts/Farrobold.woff2') format('woff2'), url('../resources/fonts/Farrobold.woff') format('woff'), url('../resources/fonts/Farrobold.ttf') format('truetype');
     font-weight: 700;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Gilroy';
-    src: url('../fonts/Gilroy-Light.otf') format('truetype');
-    font-weight: 300;
     font-style: normal;
 }

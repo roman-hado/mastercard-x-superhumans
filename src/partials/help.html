@@ -5,35 +5,41 @@
       <img class="w-full h-full object-cover" src="../../img/svg/invite-top-mask.svg" alt="invite mask" />
     </picture>
   </div>
-  <div class="h-[401px] md:h-[1047px] md:min-w-[356px] lg:min-w-[556px] xl:min-w-[656px] xl:max-w-[656px]">
+  <div class="h-[401px] md:h-[806px] md:min-w-[356px] lg:min-w-[556px] xl:min-w-[706px] xl:max-w-[706px]">
     <picture>
       <source srcset="../../img/invite-logo-d.png" media="(min-width: 768px)" />
-      <img class="object-cover w-full h-full" src="../../img/invite-logo.png" alt="invite logo">
+      <img class="help-logo object-cover w-full h-full md:h-[932px]" src="../../img/invite-logo.png" alt="invite logo">
     </picture>
   </div>
 
-  <div class="relative px-5 md:px-[72px] mt-1.5 md:mt-[164px] pb-6 max-w-[800px] min-[1500px]:mx-auto">
-    <div class="absolute mt-[-82px] w-full ml-[-20px] z-1 md:hidden">
-      <svg class="w-full h-full object-cover" width="375" height="125" viewBox="0 0 375 125" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M74.3205 25.1501L0 -7.62939e-06V125H542V13.5135L247.1 49.5495L204.223 22.1471L74.3205 25.1501Z" fill="white"/>
-      </svg>
-    </div>
-    <h2 x-text="$t('content_with_img.title')" class="relative z-2 font-bold text-black text-[30px] leading-[34px] italic md:leading-[50.4px] md:text-[45px]"></h2>
-    <p class="relative font-faroTrial z-2 mt-[22px] md:mt-[36px] leading-[20.8px] text-[16px] md:text-lg md:leading-[22.6px]">
-      <span x-text="$t('content_with_img.paragraph_1')" class="xl:pr-10"></span>
+  <div class="relative px-5 md:pl-[76px] md:pr-[68px] mt-1.5 md:mt-[164px] pb-6 max-w-[800px] min-[1500px]:mx-auto font-faroTrial z-2 leading-[20px] text-[16px] md:text-[22px] md:leading-[28px] md:traking-[0.4px]">
+    <p class="relative tracking-[0.3px] mt-[22px] md:mt-[20px]">
+      Єднатися для допомоги тим, хто її потребує найбільше – <span class="font-bold">БЕЗЦІННО.</span>
       <br><br>
-      <span x-text="$t('content_with_img.paragraph_2')"></span>
+      З 3 квітня по 31 травня 2023 року Mastercard у рамках акції «ЄДНАТИСЯ ДЛЯ ДОПОМОГИ» ініціює благодійний збір коштів для Superhumans.Centre. Долучайтеся до збору, адже кожна ваша гривня важлива! А Mastercard зі свого боку подвоїть ваш донат*.
       <br><br>
-      <span x-text="$t('content_with_img.paragraph_3')"></span>
+      <span class="font-bold tracking-[0.6px]">Механіка</span>
       <br><br>
-      <span x-text="$t('content_with_img.paragraph_4')" class="font-tryGrtskVariable font-bold italic mt-1 md:mt-[8px] text-[18px] md:text-[20px] leading-[23px] md:leading-[25px] inline-block">
-      </span>
+      <div class="flex gap-[2px] tracking-[0.6px] sm:mt-[10px] md:mt-[0]">
+        <p class="font-bold">1.</p>
+        <p>
+          Зробіть благодійний внесок на будь-яку  
+          суму для Superhumans.Centre своєю     
+          карткою Mastercard®.
+        </p>
+      </div>
+      <br>
+      <div class="flex gap-[2px] leading-[20px] mt-[1px] tracking-[0.6px] md:mt-[4px]">
+        <p class="font-bold">2.</p>
+        <p>
+          Внески будуть подвоєні разом 
+          із Mastercard*.
+        </p>
+      </div>
+      <br>
+      <p class="text-[12px] tracking-[0.34px] leading-[16px] mt-[12px] md:mt-[32px] md:text-[14px] md:leading-[17.5px]">
+        * Подвоєння внесків здійснюється на умовах і у межах визначених офіційними правилами Акції «ЄДНАТИСЯ ДЛЯ ДОПОМОГИ» _____________ посилання.
+      </p>
     </p>
-    <button
-      x-text="$t('common.buttonCAT')"
-      @click="open()"
-      class="relative z-10 font-faroTrial help-btn mx-auto md:mx-[0px] w-[207px] md:w-[248px] block bg-btn-color text-white h-[49.50px] md:h-[59px] uppercase text-base md:text-xl mt-[50px] md:mt-[54px]"
-    >
-    </button>
   </div>
 </section>
