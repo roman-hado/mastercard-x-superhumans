@@ -4,6 +4,7 @@ const {
   series,
   watch
 } = require('gulp');
+const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const del = require('del');
@@ -25,6 +26,7 @@ const image = require('gulp-imagemin');
 const {
   readFileSync
 } = require('fs');
+const copy = require('gulp-copy');
 const typograf = require('gulp-typograf');
 const webp = require('gulp-webp');
 const avif = require('gulp-avif');
@@ -41,7 +43,9 @@ const buildFolder = './app';
 const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
+  srcAssetsFolder: `${srcFolder}/assets`,
   buildImgFolder: `${buildFolder}/img`,
+  buildAssetsFolder: `${buildFolder}`,
   srcScss: `${srcFolder}/styles/*.scss`,
   buildCssFolder: `${buildFolder}/css`,
   srcFullJs: `${srcFolder}/js/**/*.js`,
@@ -55,6 +59,11 @@ let isProd = false; // dev by default
 
 const clean = () => {
   return del([buildFolder])
+}
+
+const copyPdf = () => {
+  return src(`${paths.srcAssetsFolder}/official.pdf`)
+    .pipe(copy(paths.buildAssetsFolder, { prefix: 1 }));
 }
 
 //svg sprite
@@ -298,6 +307,7 @@ const watchFiles = () => {
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png,svg}`, images);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, webpImages);
   watch(`${paths.srcImgFolder}/**/**.{jpg,jpeg,png}`, avifImages);
+  watch(`${paths.srcAssetsFolder}/official.pdf`, copyPdf);
   watch(paths.srcSvg, svgSprites);
 }
 
@@ -352,11 +362,11 @@ const toProd = (done) => {
   done();
 };
 
-exports.default = series(clean, htmlInclude, scripts, devStyles, resources, images, webpImages, avifImages, svgSprites, watchFiles);
+exports.default = series(clean, htmlInclude, scripts, devStyles, resources, images, webpImages, avifImages, svgSprites, watchFiles, copyPdf);
 
-exports.backend = series(clean, htmlInclude, scriptsBackend, resources, images, webpImages, avifImages, svgSprites)
+exports.backend = series(clean, htmlInclude, scriptsBackend, resources, images, webpImages, avifImages, svgSprites, copyPdf)
 
-exports.build = series(toProd, clean, htmlInclude, scripts, devStyles, resources, images, webpImages, avifImages, svgSprites, htmlMinify);
+exports.build = series(toProd, clean, htmlInclude, scripts, devStyles, resources, images, webpImages, avifImages, svgSprites, htmlMinify, copyPdf);
 
 exports.cache = series(cache, rewrite);
 
