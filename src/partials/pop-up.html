@@ -1,6 +1,5 @@
 <div
     id="pop-up"
-    x-init="lang = $store.language.lang"
     class="fixed z-[100] w-screen h-screen overflow-y-auto invisible opacity-0 bg-white top-0 left-0 translate-y-[-200%] transition-all duration-500 flex flex-col justify-between md:justify-start"
     :class="{ '!translate-y-0 !visible !opacity-100': isOpened }"
 >
@@ -13,8 +12,10 @@
     </div>
     
     <div class="container mx-auto px-[17px] md:pt-[34px] w-full text-center md:w-[517px]">
-    <h3 class="text-xl leading-[24px] font-bold italic md:text-[30px] md:leading-[36px]" x-text="$t('popup.title')"></h3>
-    <div class="font-faroTrial flex justify-center text-5xl mt-[7px] md:mt-[3px] md:text-[70px] md:leading-[84px]">
+    <h3 class="text-xl leading-[24px] font-bold italic md:text-[30px] md:leading-[36px]">
+        Ваш внесок
+    </h3>
+    <div class="font-farro flex justify-center text-5xl mt-[7px] md:mt-[3px] md:text-[70px] md:leading-[84px]">
         <span class="text-base leading-[28px] mr-[4px] md:text-2xl md:leading-[61px]" x-text="currencySign"></span>
         <span x-effect="formatAmount(amount)" x-text="intAmount"></span>
         <span class="text-base leading-[69px] md:text-[24px] md:leading-[117px]" x-text="decimalAmount"></span>
@@ -24,13 +25,15 @@
 
     <div class="mt-[44px] md:mt-[50px]">
         <div class="flex justify-between">
-        <p class="font-bold italic text-base leading-[23px] md:text-[25px] md:leading-[30px]" x-text="$t('popup.heading')"></p>
+        <p class="font-bold italic text-base leading-[23px] md:text-[25px] md:leading-[30px]">
+            Оберіть суму внеску
+        </p>
 
         <div
             x-on:keydown.escape.prevent.stop="closeSelect($refs.button)"
             x-on:focusin.window="! $refs.panel.contains($event.target) && closeSelect()"
             x-id="['dropdown-button']"
-            class="relative font-faroTrial"
+            class="relative font-farro"
         >
             <button
                 x-ref="button"
@@ -121,7 +124,7 @@
 
         </div>
         </div>
-        <div class="amount-btns font-faroTrial w-full h-[44px] md:h-[63.25px] flex justify-between gap-[5px] md:gap-[8.2px] mt-[16px] md:mt-[25px] text-lg md:text-2xl">
+        <div class="amount-btns font-farro w-full h-[44px] md:h-[63.25px] flex justify-between gap-[5px] md:gap-[8.2px] mt-[16px] md:mt-[25px] text-lg md:text-2xl">
         <div
             class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer flex amount-btn--active"
             data-amount-value="25"
@@ -152,20 +155,20 @@
         </div>
         </div>
 
-        <div class="w-full font-faroTrial h-[44px] md:h-[63.25px] relative border border-silver mt-[21px] text-base">
+        <div class="w-full font-farro h-[44px] md:h-[63.25px] relative border border-silver mt-[21px] text-base">
         <span class="absolute block h-full flex items-center pl-[8px] md:pl-[15px] md:text-[20px]" x-text="currencySign"></span>
         <input
             class="input-amount w-full h-full outline-0 px-[34px] md:px-[44px] md:text-[20px] md:leading-[24px] placeholder:text-silver-chalice"
             type="number"
             value=""
-            :placeholder="$t('popup.placeholder')"
+            placeholder="Інша сума"
             @keyup="onInputAmount($el)"
         />
         </div>
     </div>
 
     <div
-        class="text-start mt-[9.5px] font-faroTrial text-xs text-silver-chalice md:mt-[10px]"
+        class="text-start mt-[9.5px] font-faro text-xs text-silver-chalice md:mt-[10px]"
         :class="lang === 'es' ? 'block' : 'hidden'"
     >*Como el pago es directo a la ONG, en la aprobación final de tu banco verás que se convierte la moneda de Euros (EUR) a Grivna (UAH). El importe es el equivalente con cambio actual -aprox. 1€=0.025UAH</div>
     </div>
@@ -177,9 +180,9 @@
 >
     <button
         @click="sendRequest()"
-        x-text="$t('common.buttonCAT')"
-        class="help-btn w-full font-faroTrial block bg-btn-color text-white h-[54px] md:h-[77.3px] uppercase text-base md:text-2xl"
+        class="help-btn w-full font-faroTrial block bg-btn-color text-black h-[54px] md:h-[77.3px] uppercase text-base md:text-2xl"
     >
+        ПРИ<span class="font-bold">ЄДНАТИСЯ</span>
     </button>
 </div>
 </div>
