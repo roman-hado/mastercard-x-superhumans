@@ -11,11 +11,15 @@
 }
 
 body {
-  font-family: 'TRY Grtsk Variable', sans-serif;
+  font-family: 'Faro', sans-serif;
 }
 
 .hero-bg {
   object-position: 93% -4px;
+}
+
+.inherit {
+  font-style: inherit;
 }
 
 @media screen and (min-width: 768px) {

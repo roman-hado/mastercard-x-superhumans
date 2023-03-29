@@ -222,7 +222,7 @@
   </div>
   <div class="container px-6 absolute inset-0 mx-auto flex items-center md:px-[34px]">
     <h1
-        class="text-white font-tryGrtskVariable italic text-[40px] font-bold mt-[-28px] leading-[48px] max-w-[230px] xl:max-w-[780px] xl:text-[79px] xl:mt-[-98px] xl:leading-[106px] relative"
+        class="inherit text-white font-tryGrtskVariable italic text-[40px] font-bold mt-[-28px] leading-[48px] max-w-[230px] xl:max-w-[780px] xl:text-[79px] xl:mt-[-98px] xl:leading-[106px] relative"
       >
       Єднатися <span class='md:hidden'><br/></span>для допомоги. Безцінно
     </h1>
@@ -304,12 +304,12 @@
       </div>
       <br>
       <p class="text-[12px] tracking-[0.34px] leading-[16px] mt-[12px] md:mt-[32px] md:text-[14px] md:leading-[17.5px]">
-        * Подвоєння внесків здійснюється на умовах і у межах визначених офіційними правилами Акції «ЄДНАТИСЯ ДЛЯ ДОПОМОГИ» _____________ посилання.
+        * Подвоєння внесків здійснюється на умовах і у межах визначених <a rel="noopener" target="_blank" href="./img/official.pdf">офіційними правилами Акції</a> «ЄДНАТИСЯ ДЛЯ ДОПОМОГИ» _____________ посилання.
       </p>
     </p>
   </div>
 </section>
-      <section id="mastercard" class="relative mt-[123px] bg-[#2ED1FF] xl:mt-[210px] 1400:mt-[80px]">
+      <section id="mastercard" class="relative mt-[123px] bg-[#BECDCE] xl:mt-[210px] 1400:mt-[80px]">
   <div class="absolute top-[-101px] left-0 w-full lg:top-[-115px] xl:top-[-210px]">
     <picture>
       <source media="(min-width: 767px)" srcset="../../img/svg/mastercard-bg-desk.svg">
@@ -338,14 +338,14 @@
     </button>
   </div>
 </section>
-      <section id="injured" class="relative mt-[-46px] 400:mt-[-50px] md:mt-[-75px] lg:mt-[-155px] 2xl:mt-[-170px]">
-  <div>
+      <section id="injured" class="relative mt-[-2px] bg-[#BECDCE]">
+  <div class="pt-[56px] md:pt-[59px]">
     <picture>
       <source srcset="./img/superhumans-d.png" media="(min-width: 520px)" />
-            <img class="w-full h-full fit-cover" src="./img/superhumans.png" alt="superhumans logo">
+      <img class="w-full h-full fit-cover" src="./img/superhumans.png" alt="superhumans logo">
     </picture>
   </div>
-  <div class="mt-[-70px] px-5 md:px-[72px] text-white absolute top-0 flex items-center justify-center text-center inset-0 italic text-[45px] md:text-[70px] xl:text-[100px] leading-[54px] md:leading-[80px] xl:leading-[120px] font-bold">
+  <div class="font-tryGrtskVariable mt-[20px] md:mt-[-17px] px-5 md:px-[72px] text-white absolute top-0 flex items-center justify-center text-center inset-0 inherit text-[40px] md:text-[70px] xl:text-[100px] leading-[48px] md:leading-[80px] xl:leading-[120px] font-bold">
     <h2>Ті, хто дістали травми внаслідок війни — Superhumans!</h2>
   </div>
 </section>
@@ -367,12 +367,12 @@
     </p>
     <button
       @click="open()"
-      class="help-btn mx-auto font-normal font-faroTrial w-[207px] md:w-[248px] block bg-btn-color text-black h-[49.50px] md:h-[59px] uppercase text-base md:text-xl mt-[50px] md:mt-[70px]"
+      class="help-btn mx-auto font-normal font-faroTrial w-[207px] md:w-[248px] block bg-btn-color text-black h-[49.50px] md:h-[59px] uppercase text-base md:text-xl mt-[56px] md:mt-[70px]"
     >
       ПРИ<span class="font-bold">ЄДНАТИСЯ</span>
     </button>
   </div>
-  <div class="w-full md:mt-[60px]">
+  <div class="w-full md:mt-[60px] mt-[6px]">
     <picture>
       <source media="(max-width: 767px)" srcset="./img/svg/hands-mob.svg">
       <img class="w-full" src="./img/svg/hands.svg" alt="hands">
@@ -503,7 +503,7 @@
       id="video-play-btn"
       class="absolute z-10 top-[50%] left-[50%] w-[53px] h-[68px] translate-x-[-50%] translate-y-[-50%] md:w-[92px] md:h-[117px] hover:scale-125 transition-transform"
     >
-    <svg class="w-full h-full" viewBox="0 0 92 117" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg class="w-full h-full hidden md:inline-block" viewBox="0 0 92 117" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0V117L92 58.5L0 0Z" fill="white"/>
     </svg>
     </button>
@@ -518,7 +518,7 @@
 </section>
     </main>
 
-    <footer id="footer" class="relative mt-[-90px] pt-[112px] pb-[43px] sm:mt-[-190px] 400:pt-[190px] lg:pt-[146px] lg:pb-[56px] xl:mt-[-135px] 2xl:mt-[-175px] 2xl:pt-[307px] 2xl:pb-[200px]">
+    <footer id="footer" class="relative mt-[-108px] pt-[112px] pb-[43px] sm:mt-[-190px] 400:pt-[190px] lg:pt-[146px] lg:pb-[56px] xl:mt-[-120px] 2xl:mt-[-200px] 2xl:pt-[307px] 2xl:pb-[200px]">
   <div class="absolute top-0 left-0 w-full h-full z-0">
     <picture>
       <source media="(min-width: 767px)" srcset="./img/svg/footer-desk-bg.svg">
@@ -526,8 +526,8 @@
       <img src="./img/svg/footer-desk-bg.svg" class="object-cover w-full h-full" alt="decor">
     </picture>
   </div>
-  <div class="mx-auto px-5 370:px-12 md:px-[40px] xl:px-[101px]">
-    <div class="mt-4 md:mt-[60px] md:flex md:justify-between md:relative md:gap-[20px] max-w-[1120px] mx-auto">
+  <div class="mx-auto mt-[-24px] px-5 370:px-12 md:px-[40px] xl:px-[101px]">
+    <div class="mt-4 md:mt-[60px] md:flex md:justify-between md:relative md:gap-[20px] max-w-[1120px] mx-auto px-[10px]">
       <div>
         <div class="relative pb-[86px] md:pb-0 h-full md:flex md:flex-col md:justify-between">
           <div class="w-[86px] h-[48px] lg:w-[100px] lg:h-[58px] xl:w-[126px] xl:h-[78px] mx-auto mb-[42px] lg:mb-[48px]">
@@ -550,7 +550,7 @@
             </ul>
             <div class="text-center">
               <a href="https://wwww.mastercard.ua/" target="_blank" class="text-lg leading-6 font-faroTrial lg:text-[26px] lg:leading-[34px]">
-                wwww.mastercard.ua
+                www.mastercard.ua
               </a>
             </div>
           </div>
@@ -558,7 +558,7 @@
       </div>
       <div>
         <div class="relative pb-[86px] md:pb-0 h-full md:flex md:flex-col md:justify-between">
-          <div class="w-[276px] h-[40px] lg:w-[300px] lg:h-[48px] xl:w-[400px] xl:h-[57px] mx-auto mb-6 lg:mb-[60px]">
+          <div class="w-[276px] h-[40px] lg:w-[300px] lg:h-[48px] xl:w-[400px] xl:h-[57px] mx-auto mb-6 lg:mb-[60px] md:mt-[12px]">
             <img src="./img/svg/superhumans.svg" class="w-full h-full" alt="Superhumans">
           </div>
           <div>
@@ -583,32 +583,26 @@
       </div>
       <div>
         <div class="relative h-full md:flex md:flex-col md:justify-between">
-          <div class="w-[65px] h-[45px] lg:w-[76px] lg:h-[54px] xl:w-[91px] xl:h-[63px] mx-auto mb-6 lg:mb-[67px]">
-            <img src="./img/svg/the42-logo.svg" class="w-full h-full" alt="The42">
+          <div class="w-[65px] h-[45px] lg:w-[76px] lg:h-[58px] xl:w-[91px] xl:h-[62px] mx-auto mb-6 lg:mb-[59px] md:mt-[8px]">
+            <img src="./img/svg/the42-logo.svg" class="w-full h-full" alt="https://42manufactory.com/">
           </div>
           <div>
             <ul class="flex justify-center mb-3 lg:mb-8">
               <li class="mr-4 lg:mr-5">
-                <a href="https://instagram.com/blablacar_ua" target="_blank"><img src="./img/svg/insta.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Instagram"></a>
+                <a href="https://instagram.com/42manufactory?igshid=YmMyMTA2M2Y=" target="_blank"><img src="./img/svg/insta.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Instagram"></a>
               </li>
               <li class="mr-4 lg:mr-5">
-                <a href="https://facebook.com/BlaBlaCarUkraina" target="_blank"><img src="./img/svg/facebook.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Facebook"></a>
-              </li>
-              <li class="mr-4 lg:mr-5">
-                <a href="https://twitter.com/BlaBlaCar_UA" target="_blank"><img src="./img/svg/twitter.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Twitter"></a>
-              </li>
-              <li>
-                <a href="https://youtube.com/c/BlaBlaCarUAforUkraine" target="_blank"><img src="./img/svg/youtube.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Youtube"></a>
+                <a href="https://m.facebook.com/42manufactory/?mibextid=LQQJ4d" target="_blank"><img src="./img/svg/facebook.svg" class="w-7 h-7 lg:w-[38px] lg:h-[38px]" alt="Facebook"></a>
               </li>
             </ul>
-            <div class="text-center"><a href="https://www.blablacar.com.ua/" target="_blank" class="text-lg leading-6 font-faroTrial lg:text-[26px] lg:leading-[34px]">www.blablacar.com.ua</a></div>
+            <div class="text-center"><a href="https://42manufactory.com" target="_blank" class="text-lg leading-6 font-faroTrial lg:text-[26px] lg:leading-[34px]">https://42manufactory.com/</a></div>
           </div>
         </div>
       </div>
     </div>
     <div class="relative font-faroTrial text-[18px] leading-[23px] lg:text-[26px] lg:leading-[34px] mt-[68px] lg:mt-[48px] 2xl:mt-[90px]">
-      <a href="./img/official.pdf" rel="noopener" target="_blank" class="w-fit mx-auto flex items-center justify-center underline">
-        <span class="mr-3 lg:mr-5">Офіційні правила</span>
+      <a href="./img/official.pdf" rel="noopener" target="_blank" class="w-fit mx-auto flex items-center justify-center underline md:gap-[9px]">
+        <span class="mr-3 lg:mr-5 tracking-[0.4px] md:tracking-[0.8px]">Офіційні правила</span>
         <picture>
           <source media="(min-width: 1023px)" srcset="./img/svg/download-d.svg">
           <source media="(max-width: 1023px)" srcset="./img/svg/download.svg">

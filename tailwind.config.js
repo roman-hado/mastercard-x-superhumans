@@ -34,8 +34,7 @@ module.exports = {
         '2xl': '1536px',
     },
     fontFamily: {
-      Farro: ["Farro", "sans-serif"],
-      faroTrialBold: ["FaroTrialBold", "sans-serif"],
+      farro: ["Farro", "sans-serif"],
       tryGrtskVariable: ["TRY Grtsk Variable", "sans-serif"],
       gilroy: ["Gilroy", "sans-serif"],
     },
