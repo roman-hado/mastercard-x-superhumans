@@ -8,7 +8,7 @@ export const popUp = () => ({
   currencySign: "₴",
   decimalAmount: ".00",
   isOpenedSelect: false,
-  lang: null,
+  lang: "ua",
 
   init() {
     document.addEventListener("DOMContentLoaded", () => {
@@ -188,7 +188,7 @@ export const popUp = () => ({
 
     axios({
       method: "post",
-      url: "https://blablacar.superhumans.com/api/payment",
+      url: "https://mastercard.superhumans.com/api/payment",
       data: {
         currency: this.currency,
         amount: this.amount * 100,
