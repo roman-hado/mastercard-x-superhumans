@@ -39,7 +39,7 @@ const rootFolder = path.basename(path.resolve());
 const postcss = require("gulp-postcss");
 // paths
 const srcFolder = './src';
-const buildFolder = './app';
+const buildFolder = './dist';
 const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
@@ -323,7 +323,7 @@ const cache = () => {
 };
 
 const rewrite = () => {
-  const manifest = readFileSync('app/rev.json');
+  const manifest = readFileSync('dist/rev.json');
   src(`${paths.buildCssFolder}/*.css`)
     .pipe(revRewrite({
       manifest

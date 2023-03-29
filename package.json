@@ -4,14 +4,14 @@
   "description": "gulp-builder for weblayout",
   "main": "gulpfile.js",
   "scripts": {
-    "html": "node-w3c-validator -f lint -evH -i app/**/*.html",
+    "html": "node-w3c-validator -f lint -evH -i dist/**/*.html",
     "dev": "gulp",
     "build": "gulp build",
     "cache": "gulp cache",
     "backend": "gulp backend",
     "zip": "gulp zip",
     "code": "editorconfig-checker",
-    "tailwind": "npx tailwindcss -i ./src/scss/main.css -o ./app/css/tailwind.css --watch"
+    "tailwind": "npx tailwindcss -i ./src/scss/main.css -o ./dist/css/tailwind.css --watch"
   },
   "author": "Eugene Kizilov",
   "license": "ISC",
