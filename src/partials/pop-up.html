@@ -15,7 +15,7 @@
     <h3 class="text-xl leading-[24px] font-bold italic md:text-[30px] md:leading-[36px]">
         Ваш внесок
     </h3>
-    <div class="font-farro flex justify-center text-5xl mt-[7px] md:mt-[3px] md:text-[70px] md:leading-[84px]">
+    <div class="font-faro flex justify-center text-5xl mt-[7px] md:mt-[3px] md:text-[70px] md:leading-[84px]">
         <span class="text-base leading-[28px] mr-[4px] md:text-2xl md:leading-[61px]" x-text="currencySign"></span>
         <span x-effect="formatAmount(amount)" x-text="intAmount"></span>
         <span class="text-base leading-[69px] md:text-[24px] md:leading-[117px]" x-text="decimalAmount"></span>
@@ -33,7 +33,7 @@
             x-on:keydown.escape.prevent.stop="closeSelect($refs.button)"
             x-on:focusin.window="! $refs.panel.contains($event.target) && closeSelect()"
             x-id="['dropdown-button']"
-            class="relative font-farro"
+            class="relative font-faro"
         >
             <button
                 x-ref="button"
@@ -59,13 +59,6 @@
             >
             <button
                 @click="onChangeCurrencySelect($el)"
-                data-currency-name="en"
-                class="flex text-black items-center gap-2 w-full px-2.5 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                $USD
-            </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
                 data-currency-name="ua"
                 class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
             >
@@ -73,17 +66,10 @@
             </button>
             <button
                 @click="onChangeCurrencySelect($el)"
-                data-currency-name="gb"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
+                data-currency-name="en"
+                class="flex text-black items-center gap-2 w-full px-2.5 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
             >
-                £GBP
-            </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
-                data-currency-name="pl"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                złPLN
+                $USD
             </button>
             <button
                 @click="onChangeCurrencySelect($el)"
@@ -92,39 +78,10 @@
             >
                 €EUR
             </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
-                data-currency-name="cz"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                KčCZK
-            </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
-                data-currency-name="ro"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                LRON
-            </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
-                data-currency-name="hu"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                FtHUF
-            </button>
-            <button
-                @click="onChangeCurrencySelect($el)"
-                data-currency-name="rs"
-                class="flex text-black items-center gap-2 w-full px-2 py-2 text-left text-base md:text-[18px] md:leading-[30px] hover:bg-gray-50 disabled:text-gray-500"
-            >
-                dinRSD
-            </button>
             </div>
-
         </div>
         </div>
-        <div class="amount-btns font-farro w-full h-[44px] md:h-[63.25px] flex justify-between gap-[5px] md:gap-[8.2px] mt-[16px] md:mt-[25px] text-lg md:text-2xl">
+        <div class="amount-btns font-faro w-full h-[44px] md:h-[63.25px] flex justify-between gap-[5px] md:gap-[8.2px] mt-[16px] md:mt-[25px] text-lg md:text-2xl">
         <div
             class="amount-btn h-full flex justify-center items-center w-full border border-silver cursor-pointer flex amount-btn--active"
             data-amount-value="25"
@@ -155,7 +112,7 @@
         </div>
         </div>
 
-        <div class="w-full font-farro h-[44px] md:h-[63.25px] relative border border-silver mt-[21px] text-base">
+        <div class="w-full font-faro h-[44px] md:h-[63.25px] relative border border-silver mt-[21px] text-base">
         <span class="absolute block h-full flex items-center pl-[8px] md:pl-[15px] md:text-[20px]" x-text="currencySign"></span>
         <input
             class="input-amount w-full h-full outline-0 px-[34px] md:px-[44px] md:text-[20px] md:leading-[24px] placeholder:text-silver-chalice"
@@ -180,7 +137,7 @@
 >
     <button
         @click="sendRequest()"
-        class="help-btn w-full font-faroTrial block bg-btn-color text-black h-[54px] md:h-[77.3px] uppercase text-base md:text-2xl"
+        class="help-btn w-full font-faro block bg-btn-color text-black h-[54px] md:h-[77.3px] uppercase text-base md:text-2xl"
     >
         ПРИ<span class="font-bold">ЄДНАТИСЯ</span>
     </button>

@@ -65,6 +65,21 @@ input[type=number] {
 .inherit {
   font-style: inherit;
 }
+.help-logo {
+  object-position: -89px;
+}
+.injured-logo {
+  object-position: -174px -49px;
+}
+
+@media screen and (min-width: 440px) {
+  .help-logo {
+    object-position: initial; 
+  }
+  .injured-logo {
+    object-position: top;
+  }
+}
 
 @media screen and (min-width: 768px) {
   .hero-bg {
@@ -74,6 +89,7 @@ input[type=number] {
 @media screen and (min-width: 1280px) {
   .help-logo {
     object-position: -193px 0;
+    object-position: -184px -12px;
   }
 }
 @media screen and (min-width: 1441px) {
