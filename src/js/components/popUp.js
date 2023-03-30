@@ -183,7 +183,8 @@ export const popUp = () => ({
     if (!this.amount || +this.amount === 0) {
       return;
     }
-    const lang = "ua";
+    const lang = "uk";
+    const urlLang = "ua";
     const thankText = "Дякуємо за участь у нашій кампанії зі збору коштів для громадської організації Superhumans Center, що займається протезуванням українців, поранених внаслідок війни. Superhumans отримають 100% вашої пожертви.";
 
     axios({
@@ -194,7 +195,7 @@ export const popUp = () => ({
         amount: this.amount * 100,
         lang: lang,
         thankText: thankText,
-        urlLang: lang
+        urlLang: urlLang
       },
     })
       .then(function (response) {
