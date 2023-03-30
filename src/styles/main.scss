@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: 'Faro', sans-serif;
+  font-family: 'Farro', sans-serif;
 }
 .amount-btn {
   transition-duration: 0.2s;
@@ -65,11 +65,20 @@ input[type=number] {
 .inherit {
   font-style: inherit;
 }
+
 @media screen and (min-width: 768px) {
   .hero-bg {
     object-position: 100% 0; 
   }
+}
+@media screen and (min-width: 1280px) {
   .help-logo {
     object-position: -193px 0;
+  }
+}
+@media screen and (min-width: 1441px) {
+  .help-logo {
+    object-fit: cover;
+    object-position: initial;
   }
 }

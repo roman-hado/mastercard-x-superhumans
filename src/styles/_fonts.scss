@@ -1,25 +1,31 @@
 @font-face {
     font-family: 'Farro';
-    src: local('Farro Medium'), local('Farro-Medium'), url('../resources/fonts/Farromedium.woff2') format('woff2'), url('../resources/fonts/Farromedium.woff') format('woff'), url('../resources/fonts/Farromedium.ttf') format('truetype');
+    src: local('Farro Medium'), local('Farro-Medium'), url('../fonts/Farromedium.woff2') format('woff2'), url('../fonts/Farromedium.woff') format('woff'), url('../fonts/Farromedium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
 }
 @font-face {
     font-family: 'Farro';
-    src: local('Farro Light'), local('Farro-Light'), url('../resources/fonts/Farrolight.woff2') format('woff2'), url('../resources/fonts/Farrolight.woff') format('woff'), url('../resources/fonts/Farrolight.ttf') format('truetype');
+    src: local('Farro Light'), local('Farro-Light'), url('../fonts/Farrolight.woff2') format('woff2'), url('../fonts/Farrolight.woff') format('woff'), url('../fonts/Farrolight.ttf') format('truetype');
     font-weight: 300;
     font-style: normal;
 }
 @font-face {
     font-family: 'Farro';
-    src: local('Farro Regular'), local('Farro-Regular'), url('../resources/fonts/Farroregular.woff2') format('woff2'), url('../resources/fonts/Farroregular.woff') format('woff'), url('../resources/fonts/Farroregular.ttf') format('truetype');
+    src: local('Farro Regular'), local('Farro-Regular'), url('../fonts/Farroregular.woff2') format('woff2'), url('../fonts/Farroregular.woff') format('woff'), url('../fonts/Farroregular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
 }
 @font-face {
     font-family: 'Farro';
-    src: local('Farro Bold'), local('Farro-Bold'), url('../resources/fonts/Farrobold.woff2') format('woff2'), url('../resources/fonts/Farrobold.woff') format('woff'), url('../resources/fonts/Farrobold.ttf') format('truetype');
+    src: local('Farro Bold'), local('Farro-Bold'), url('../fonts/Farrobold.woff2') format('woff2'), url('../fonts/Farrobold.woff') format('woff'), url('../fonts/Farrobold.ttf') format('truetype');
     font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Faro Regular Sad';
+    src: local('Faro-RegularSad'), local('Faro-RegularSad'), url('../fonts/Faro-RegularSad.ttf') format('ttf'), url('../fonts/Faro-RegularSad.woff') format('woff');
+    font-weight: 400;
     font-style: normal;
 }
 @font-face {

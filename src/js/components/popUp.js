@@ -194,7 +194,7 @@ export const popUp = () => ({
         amount: this.amount * 100,
         lang: lang,
         thankText: thankText,
-        urlLang: this.lang
+        urlLang: lang
       },
     })
       .then(function (response) {
