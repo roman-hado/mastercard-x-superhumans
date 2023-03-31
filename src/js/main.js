@@ -32,6 +32,14 @@ $("#video-play-btn").on("click", function (e) {
   $("#superhumans-video").removeClass("superhumans-video");  
 });
 
+const appHeight = () => {
+  const doc = document.documentElement
+  doc.style.setProperty('--app-height', `${window.innerHeight}px`)
+}
+
+window.addEventListener('resize', appHeight)
+appHeight()
+
 Alpine.data("copyLink", copyLink);
 Alpine.data("popUp", popUp);
 Alpine.data("stickyButton", stickyButton);

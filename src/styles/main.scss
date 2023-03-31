@@ -4,6 +4,10 @@
 @import "../../node_modules/swiper/swiper-bundle.min";
 @import "./fonts";
 
+:root {
+  --app-height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +15,10 @@
 }
 body {
   font-family: 'Farro', sans-serif;
+}
+.pop-up {
+  height: 100vh;
+  height: var(--app-height);
 }
 .amount-btn {
   transition-duration: 0.2s;
