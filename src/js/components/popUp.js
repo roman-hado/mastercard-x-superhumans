@@ -210,11 +210,17 @@ export const popUp = () => ({
     this.clearInput();
   },
   open() {
+    const popUP = document.querySelector(".pop-up");
     this.isOpened = true;
     document.body.classList.add("overflow-hidden");
+    document.body.classList.add("touch-none");
+    popUP.classList.add("touch-none");
   },
   close() {
+    const popUP = document.querySelector(".pop-up");
     this.isOpened = false;
     document.body.classList.remove("overflow-hidden");
+    document.body.classList.remove("touch-none");
+    popUP.classList.remove("touch-none");
   },
 });

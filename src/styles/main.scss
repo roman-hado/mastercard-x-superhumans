@@ -16,6 +16,12 @@
 body {
   font-family: 'Farro', sans-serif;
 }
+.touch-none {
+  touch-action: none;
+}
+.touch-auto {
+  touch-action: auto;
+}
 .pop-up {
   height: 100vh;
   height: var(--app-height);
