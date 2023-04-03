@@ -180,6 +180,10 @@ export const popUp = () => ({
     }
   },
   sendRequest() {
+    gtag('event', 'begin_checkout', {
+      'selectedAmount': `${this.amount * 100}`
+    });
+    
     if (!this.amount || +this.amount === 0) {
       return;
     }
@@ -215,6 +219,7 @@ export const popUp = () => ({
     document.body.classList.add("overflow-hidden");
     document.body.classList.add("touch-none");
     popUP.classList.add("touch-none");
+    gtag('event', 'lp_button_click', {});
   },
   close() {
     const popUP = document.querySelector(".pop-up");
